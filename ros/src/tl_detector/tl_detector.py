@@ -14,8 +14,8 @@ import cv2
 import yaml
 
 STATE_COUNT_THRESHOLD = 3
-CAMERA_IMG_PROCESS_RATE = 0.20  #  20 milliseconds  gap between successive camera image processing
-WAYPOINT_DIFFERENCE = 350  # Do not bother to process the camera image if next light is > 350 waypoints ahead.
+CAMERA_IMG_PROCESS_RATE = 0.20  #  The continuous camera image processing interval is 20 ms
+WAYPOINT_DIFFERENCE = 300  # If the next light is the > 300 way point in front, you don't need to bother with the camera image.
 
 class TLDetector(object):
     def __init__(self):
@@ -87,7 +87,7 @@ class TLDetector(object):
         time_elapsed = timer() - self.last_img_processed 
         #Do not process the camera image unless 20 milliseconds have passed from last processing
         if (time_elapsed < CAMERA_IMG_PROCESS_RATE):
-            return;
+            return
         self.has_image = True
         self.camera_image = msg
 
@@ -171,7 +171,7 @@ class TLDetector(object):
                     closest_light = light
                     line_wp_idx = temp_wp_idx
 
-        # Do not process the camera image unless the traffic light <= 350
+        # Do not process the camera image unless the traffic light <= 300
         if (closest_light) and ((line_wp_idx - car_wp_idx)  <= WAYPOINT_DIFFERENCE):
             state = self.get_light_state (closest_light)
             return (line_wp_idx, state)

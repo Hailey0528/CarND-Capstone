@@ -23,7 +23,7 @@ class TLClassifier(object):
         # load configuration string
         conf_str = rospy.get_param ("/traffic_light_config")
         self.configuration = yaml.load(conf_str)
-        self.model_dir_path = './model.h5'
+        self.model_dir_path = './light_classification/model.h5'
    
         rospy.loginfo ("model directory path: {} ".format(self.model_dir_path))
     

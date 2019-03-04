@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import numpy as np
 from std_msgs.msg import Int32
-from scipy.spatial import KDTree  #kp - for helping in closest waypoint computation
+from scipy.spatial import KDTree
 import rospy
 from geometry_msgs.msg import PoseStamped
 from styx_msgs.msg import Lane, Waypoint
@@ -20,7 +20,7 @@ TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 '''
 
 LOOKAHEAD_WPS = 50 #100 # Number of waypoints we will publish. You can change this number
-MAX_DECEL = 2. #0.5
+MAX_DECEL = 3. #0.5
 
 
 class WaypointUpdater(object):

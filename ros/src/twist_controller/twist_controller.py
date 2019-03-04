@@ -27,8 +27,8 @@ class Controller(object):
         self.throttle_controller = PID (kp, ki, kd, mn, mx)
 
         tau = 0.5 # 1 / (2pi * tau) is cut_off frequency
-        ts = 0.2 # sampling time
-        self.vel_lpf = LowPassFilter (tau, ts)
+        st = 0.2 # sampling time
+        self.vel_lpf = LowPassFilter (tau, st)
 
         self.vehicle_mass = vehicle_mass
         self.fuel_capacity = fuel_capacity
