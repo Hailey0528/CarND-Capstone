@@ -10,7 +10,7 @@ Please use **one** of the two installation options, either native **or** docker 
 | Xinwei Ye                    | yxwhululu@163.com        |
 | Jie Hou                      | jie.hou85@gmail.com      |
 | Huanhuan Xiong               | huanhuanxiong0@gmail.com |
-| CHENXIN W                    | chenxinw@vt.edu          |
+| Chenxin Wang                 | chenxinw@vt.edu          |
 
 ### Native Installation
 
