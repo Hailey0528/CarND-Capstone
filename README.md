@@ -4,11 +4,11 @@ Please use **one** of the two installation options, either native **or** docker 
 
 ## Team Members
 
-| Name                         | Udacity Mail             |
+| Name                         | Udacity Email            |
 |------------------------------|--------------------------|
 | Wenjun Jin(Team Leader)      | jinwenjun321@163.com     |
 | Xinwei Ye                    | yxwhululu@163.com        |
-| jie H                        |jie.hou85@gmail.com       |
+| Jie Hou                      | jie.hou85@gmail.com      |
 | Huanhuan Xiong               | huanhuanxiong0@gmail.com |
 | CHENXIN W                    | chenxinw@vt.edu          |
 
