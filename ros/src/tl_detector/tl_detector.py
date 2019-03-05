@@ -14,7 +14,7 @@ import cv2
 import yaml
 
 STATE_COUNT_THRESHOLD = 3
-CAMERA_IMG_PROCESS_RATE = 0.20  #  The continuous camera image processing interval is 20 ms
+CAMERA_IMG_PROCESS_RATE = 0.5  #  The continuous camera image processing interval is 50 ms
 WAYPOINT_DIFFERENCE = 300  # If the next light is the > 300 way point in front, you don't need to bother with the camera image.
 
 class TLDetector(object):
@@ -84,7 +84,7 @@ class TLDetector(object):
             return
         
         time_elapsed = timer() - self.last_img_processed 
-        #Do not process the camera image unless 20 milliseconds have passed from last processing
+        #Do not process the camera image unless 50 milliseconds have passed from last processing
         if (time_elapsed < CAMERA_IMG_PROCESS_RATE):
             return
         self.has_image = True
