@@ -57,7 +57,6 @@ class TLDetector(object):
         self.has_image = False
         self.state = TrafficLight.UNKNOWN
         self.last_img_processed = 0
-        #self.initialized = True
         rospy.spin()
         
             
@@ -135,7 +134,7 @@ class TLDetector(object):
         if (self.has_image == False) :
             self.prev_light_loc = None
             return False
-        # check whether tl_classifier for simulator is working	
+        # Verify that the tl_classifier for the simulator is working	
         cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
         result = self.light_classifier.get_classification (cv_image)
         if (self.last_light_state != result):

@@ -9,9 +9,9 @@ import tensorflow as tf
 from keras.models import load_model
 from keras import backend as K
 
-IMG_H = 600   # image height in pixels
-IMG_W = 800  # image width in pixels
-IMG_C = 3     # num of channels
+IMG_H = 600   # image height
+IMG_W = 800  # image width
+IMG_C = 3
 
 class TLClassifier(object):
     def __init__(self):
@@ -47,26 +47,25 @@ class TLClassifier(object):
         #TODO implement light color prediction
         try:
             with self.graph.as_default ():
-                # check if graph is None
+                # check if graph
                 if self.graph == None:
                     rospy.logerr ("Graph is None")
                     return TrafficLight.UNKNOWN
             
-                # check if model is Empty
+                # check if model
                 if self.model == None:
                     rospy.logerr ("Model is None")
                     return TrafficLight.UNKNOWN
                 
-                #resize the image as per model acceptance
+                #Adjust the size of the image according to the acceptability of the model
                 img = np.reshape (image,  (1, IMG_H, IMG_W, IMG_C))
                 score_list = self.model.predict (img)
             
-                #check score_list is empty
+                #check score_list
                 if (type (score_list) == None or len(score_list) == 0):
                     rospy.loginfo ("Prediction score list empty")
                     return TrafficLight.UNKNOWN
-                    
-                #non empty score_list
+
                 light_type = np.argmax (score_list)
                 if (light_type == 0):
                     return TrafficLight.RED
